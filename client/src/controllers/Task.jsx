@@ -20,7 +20,11 @@ const Task = () => {
         try {
             const response = await axios.delete(`http://localhost:3000/tasks/${id}`)
             console.log("RESPONSE FROM DELETE TASK API => ", response.data);
-            await fetchParticularUserData();
+            if (username === "Admin" || username == "admin") {
+                fetchAllUserData()
+            } else {
+                fetchParticularUserData()
+            }
         } catch (err) {
             console.error("ERROR => ", err.message)
         }
