@@ -1,0 +1,8 @@
+{
+    "task_title" : "Hospital System",
+    "description" : "Create a software to manage the Hospital tasks",
+    "due_date" : "2024-10-2",
+    "task_status": "To Do",
+    "assigned_user" : "Allen, Steffi, Raj",
+    "priority": "High"
+}

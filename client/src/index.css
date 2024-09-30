@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --text-clr : #ffffff;
+    --background-clr : #c7cece;
+}
+
+*, 
+*::before, 
+*::after {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--background-clr);
+    /* color: var(--text-clr); */
+    font-family: "Roboto", sans-serif;
+    --r: 56px; /* control the size */
+    --c1: #3FB8AF /*color 1*/ 99%,#0000 101%;
+    --c2: #FF9E9D /*color 2*/ 99%,#0000 101%;
+    
+    --s:calc(var(--r)*.866);  /* .866 = cos(30deg) */
+    --g0:radial-gradient(var(--r),var(--c1));
+    --g1:radial-gradient(var(--r),var(--c2));
+    --f:radial-gradient(var(--r) at calc(100% + var(--s)) 50%,var(--c1));
+    --p:radial-gradient(var(--r) at 100% 50%,var(--c2));
+    background:
+      var(--f) 0 calc(-5*var(--r)/2),
+      var(--f) calc(-2*var(--s)) calc(var(--r)/2),
+      var(--p) 0 calc(-2*var(--r)),
+      var(--g0) var(--s) calc(-5*var(--r)/2),
+      var(--g1) var(--s) calc( 5*var(--r)/2),
+      radial-gradient(var(--r) at 100% 100%,var(--c1)) 0 calc(-1*var(--r)),   
+      radial-gradient(var(--r) at 0%   50% ,var(--c1)) 0 calc(-4*var(--r)),
+      var(--g1) calc(-1*var(--s)) calc(-7*var(--r)/2),
+      var(--g0) calc(-1*var(--s)) calc(-5*var(--r)/2),
+      var(--p) calc(-2*var(--s)) var(--r),
+      var(--g0) calc(-1*var(--s)) calc(var(--r)/ 2),
+      var(--g1) calc(-1*var(--s)) calc(var(--r)/-2),
+      var(--g0) 0 calc(-1*var(--r)),
+      var(--g1) var(--s) calc(var(--r)/-2),
+      var(--g0) var(--s) calc(var(--r)/ 2) 
+      #FF9E9D; /*color 2 again here (yes I got lazy defining a variable ) */
+    background-size: calc(4*var(--s)) calc(6*var(--r));
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 2%;
+    padding-top: 0.5%;
+    /* background-color: rgb(230, 221, 221); */
+    background-color: rgba(255, 219, 225, 0.844);
+}
+nav{ padding-top: 10px;}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    transition: all 0.3s ease 0s;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #086a65;
+    font-size: 1.4rem;
+}
+
+.heroContainer {
+    display: grid;
+    place-items: center;
+    margin-top: 70px;
+}
+
+.hero-sub-container {
+    width: 800px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.hero-sub-container h1 {
+    text-wrap: balance;
+}
+
+.login-go-btn {
+    width: 200px;
+}
+
+
+.register-go-btn {
+    margin-left: 10px;
+    width: 200px;
+}
+
+.loginContainer {
+    display: grid;
+    place-items: center;
+    margin-top: 3.5rem;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 490px;
+    padding: 2.4rem;
+    border-radius: 20px;
+    margin-bottom: 60px;
+    background-color: white;
+}
+
+.formContainer:hover {
+    box-shadow: 5px 2px 10px #237973;
+}
+
+.error-message {
+    font-weight: bold;
+    font-size: 1.3rem;
+    
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+.login-submit-btn {
+    width: 130px;
+    margin-left: 30%;
+}
+
+.add-task-container {
+    z-index: 999;
+    display: flex;
+    background-color: orange;
+    width: fit-content;
+    padding: 0.4% 2%;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    position: fixed;
+    right: 13%;
+    bottom: 9%
+}
+
+.add-task-btn {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    gap: 4px;
+    margin-top: 10px;
+}
+
+.add-task-container:hover {
+    background-color: rgb(255, 179, 37);
+    cursor: pointer;
+    box-shadow: 2px 1px 10px 2px;
+}
+
+.task-container {
+    width: 520px;
+    padding: 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 4% 25%;
+    position: relative;
+    transition: all 0.3s ease 0s;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.task-container:hover {
+    box-shadow: 5px 2px 10px #237973;
+}
+
+.add-update-holder {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+}
+
+.update-btn {
+    margin-right: 10px;
+}
+
+.update-btn, .delete-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.update-btn > span, .delete-btn > span {
+    /* color: white; */
+    transition: all 0.3s ease 0s;
+}
+
+.update-btn > span:hover, .delete-btn > span:hover {
+    font-size: 1.8rem;
+}
+
+.update-btn > span:hover {
+    color: green;
+}
+
+.delete-btn > span:hover {
+    color: red;
+}
+
+
+@media screen and (max-width: 823px) {
+    .hero-sub-container {
+        width: fit-content;
+        margin-inline: 10px;
+    } 
+
+    .login-go-btn {
+        display: block;
+    }
+
+    .register-go-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .formContainer {
+        min-width: fit-content;
+        margin-inline: 10px;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    .login-submit-btn {
+        margin-left: 20%;
+    }
+
+    .error-message {
+        margin-inline: 30px;
+    }
+
+    .task-container {
+        min-width: 0;
+        width: fit-content;
+        margin: 2%;
+        margin-inline: 20px
+    }
+}
+
