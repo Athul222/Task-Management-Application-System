@@ -12,6 +12,9 @@ This project aims to build a basic project/task management application using the
 - Track Task Statuses (e.g., "To Do", "In Progress", "Completed")
 - Generate Summary Reports of Tasks for Each User
 
+## Test Case
+Log in as username: Admin, password: admin123 to view whole task and when you login as a user, task will only be visible if your name was in the assigned_user else create a new task and if your name was on assigned_user field then task that have given to you would be visible on the main screen.
+
 ## Tech Stack
 
 - **Frontend**: React
